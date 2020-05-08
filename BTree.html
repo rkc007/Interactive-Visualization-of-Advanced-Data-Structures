@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>
+		B-Tree Visualization
+	</title>
+
+	<!-- css sheet for how the page is laid out -->
+
+	<link rel="stylesheet" href="visualizationPageStyle.css">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<!-- jqueury stuff.  Only used for the animation speed slider. -->
+	<link rel="stylesheet" href="ThirdParty/jquery-ui-1.8.11.custom.css">
+	<script src="ThirdParty/jquery-1.5.2.min.js"></script>
+	<script src="ThirdParty/jquery-ui-1.8.11.custom.min.js"></script>
+
+	<!-- Javascript for the actual visualization code -->
+	<script type="text/javascript" src="AnimationLibrary/CustomEvents.js"> </script>
+	<script type="text/javascript" src="AnimationLibrary/UndoFunctions.js"> </script>
+	<script type="text/javascript" src="AnimationLibrary/AnimatedObject.js"> </script>
+	<script type="text/javascript" src="AnimationLibrary/AnimatedLabel.js"> </script>
+	<script type="text/javascript" src="AnimationLibrary/AnimatedCircle.js"> </script>
+	<script type="text/javascript" src="AnimationLibrary/AnimatedRectangle.js"> </script>
+	<script type="text/javascript" src="AnimationLibrary/AnimatedLinkedList.js"> </script>
+	<script type="text/javascript" src="AnimationLibrary/HighlightCircle.js"> </script>
+	<script type="text/javascript" src="AnimationLibrary/Line.js"> </script>
+	<script type="text/javascript" src="AnimationLibrary/AnimatedBTreeNode.js"> </script>
+
+	<script type="text/javascript" src="AnimationLibrary/ObjectManager.js"> </script>
+	<script type="text/javascript" src="AnimationLibrary/AnimationMain.js"> </script>
+	<script type="text/javascript" src="AlgorithmLibrary/Algorithm.js"> </script>
+	<script type="text/javascript" src="AlgorithmLibrary/BTree.js"> </script>
+
+
+</head>
+
+<body onload="init();" class="VisualizationMainPage">
+
+	<div id="container">
+		<!-- --------------------------------------Navbar-------------------------------------- -->
+		<nav class="navbar navbar-dark" style="width: 100%;background-color: #3F51B5;">
+			<a class="navbar-brand" href="algorithm_list.html">
+				<h3>Advacned Data Structures</h3>
+			</a>
+			<a class="navbar-brand my-2 my-sm-0" href="https://www.slu.edu" target="_blank">
+				<img src="https://www.slu.edu/marcom/tools-downloads/imgs/logo/left-aligned/slu_logoleftaligned_white_rgb.png"
+					width="165" height="60" alt="">
+			</a>
+		</nav>
+		<!-- --------------------------------------Navbar END-------------------------------------- -->
+
+		<div class="header">
+			<h1 style="text-align: center;text-decoration-style:solid;">B - Trees</h1>
+		</div>
+
+		<div id="mainContent">
+			<div class="row justify-content-start">
+				<div class="col-9 shadow-lg p-3 mb-5 bg-white rounded"
+					style="border: 1px ridge grey; margin-left: 35px; ">
+					<h4>Vizualization</h4>
+					<canvas id="canvas" height="400" width="1000"></canvas>
+
+					<div id="generalAnimationControlSection">
+						<table id="GeneralAnimationControls" style="visibility: hidden;"> </table>
+					</div>
+				</div>
+				<div class="col-2">
+					<div id="algoViewSection">
+						<ul class="list-group" id="AlgorithmPrint" style="overflow: hidden;">
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-around shadow-lg p-3 mb-5 bg-white rounded"
+				style="border: 1px ridge grey;margin: 20px; padding: 20px;">
+				<div id="algoControlSection">
+					<table id="AlgorithmSpecificControls"> </table>
+				</div>
+			</div>
+		</div> <!-- mainContent -->
+
+		<footer id="sticky-footer" style="flex-shrink: none;" class="py-4 bg-dark text-white-50">
+				<div class="container text-center">
+					<small>Copyright &copy; <a href="https://www.rahulchauhan.codes" target="_blank"> Rahul K Chauhan</a></small>
+						<br/>
+					<small>For Advanced Data Structures &#10084;&#65039;</small>
+				</div>
+			</footer>
+	</div><!-- container -->
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+		</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+		</script>
+</body>
+
+</html>

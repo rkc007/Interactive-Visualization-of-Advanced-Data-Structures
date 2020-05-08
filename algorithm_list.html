@@ -1,0 +1,234 @@
+<html>
+
+<head>
+    <title> Data Structure Visualization </title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body>
+        <nav class="navbar navbar-dark" style="width: 100%;background-color: #3F51B5;">
+                <a class="navbar-brand" href="algorithm_list.html">
+                    <h3>Advacned Data Structures</h3>
+                </a>
+                <a class="navbar-brand my-2 my-sm-0" href="https://www.slu.edu" target="_blank">
+                    <img src="https://www.slu.edu/marcom/tools-downloads/imgs/logo/left-aligned/slu_logoleftaligned_white_rgb.png"
+                        width="165" height="60" alt="">
+                </a>
+            </nav>
+
+    <div class="container" style="max-width:100%;">
+        <!-- --------------------------------------Navbar-------------------------------------- -->
+     
+        <!-- --------------------------------------Navbar END-------------------------------------- -->
+
+         <!-- --------------------------------------Page Content NEW-------------------------------------- -->
+
+
+          <!-- --------------------------------------Page Content NEW END-------------------------------------- -->
+          <div class="row">
+                <div class="col-2">
+                  <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical" style="margin-top: 5px;">
+                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Splay Trees</a>
+                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">B Trees</a>
+                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">AVL Trees</a>
+                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Report</a>
+                  </div>
+                </div>
+                <div class="col-10">
+                  <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <div class="data-structure-1" style="padding-top: 1%;">
+                                    <h2>Splay Trees</h2>
+                                    <a href="SplayTree.html"><h5>Show Visualization</h5></a>
+                                    <p>splay tree is an efficient implementation of a balanced binary search tree that takes
+                                        advantage of locality in the keys used in incoming lookup requests. For many
+                                        applications, there is excellent key locality. A good example is a network router. A
+                                        network router receives network packets at a high rate from incoming connections and
+                                        must quickly decide on which outgoing wire to send each packet, based on the IP address
+                                        in the packet. The router needs a big table (a map) that can be used to look up an IP
+                                        address and find out which outgoing connection to use. If an IP address has been used
+                                        once, it is likely to be used again, perhaps many times. Splay trees can provide good
+                                        performance in this situation.</p>
+                                    <p>Importantly, splay trees offer amortized O(lg n) performance; a sequence of M operations
+                                        on an n-node splay tree takes O(M lg n) time.
+                                    </p>
+                                    <p>A splay tree is a binary search tree. It has one interesting difference, however:
+                                        whenever an element is looked up in the tree, the splay tree reorganizes to move that
+                                        element to the root of the tree, without breaking the binary search tree invariant. If
+                                        the next lookup request is for the same element, it can be returned immediately. In
+                                        general, if a small number of elements are being heavily used, they will tend to be
+                                        found near the top of the tree and are thus found quickly.</p>
+                                    <p>We know a way to move an element upward in a binary search tree: tree
+                                        rotation. When an element is accessed in a splay tree, tree rotations are used to move
+                                        it to the top of the tree. This simple algorithm can result in extremely good
+                                        performance in practice. Notice that the algorithm requires that we be able to update
+                                        the tree in place, but the abstract view of the set of elements represented by the tree
+                                        does not change and the rep invariant is maintained. This is an example of a benign side
+                                        effect, because it does not change the value represented by the data structure.</p>
+                                    <p>
+                                        There are three kinds of tree rotations that are used to move elements upward in the
+                                        tree. These rotations have two important effects: they move the node being splayed
+                                        upward in the tree, and they also shorten the path to any nodes along the path to the
+                                        splayed node. This latter effect means that splaying operations tend to make the tree
+                                        more balanced.
+                                    </p>
+                                    <h5>Rotation 1: Simple rotation </h5>
+                                    <p>The root of the splay tree, moving the splayed node x up to become the new tree root.
+                                        Here we have A < x < B < y < C, and the splayed node is either x or y depending on which
+                                            direction the rotation is. It is highlighted in red.</p> <p>
+                                            <img src="./images/s1.png">
+                                    </p>
+                                    <h5>Rotation 2: Zig-Zig and Zag-Zag </h5>
+                                    <p>Lower down in the tree rotations are performed in pairs so that nodes on the path from
+                                        the splayed node to the root move closer to the root on average. In the "zig-zig" case,
+                                        the splayed node is the left child of a left child or the right child of a right child
+                                        ("zag-zag").</p>
+                                    <p>
+                                            <img src="./images/s2.png">
+                                    </p>
+                                    <h5>Rotation 3: Zig-Zag </h5>
+                                    <p>In the "zig-zag" case, the splayed node is the left child of a right child or vice-versa.
+                                        The rotations produce a subtree whose height is less than that of the original tree.
+                                        Thus, this rotation improves the balance of the tree. In each of the two cases shown, y
+                                        is the splayed node:</p>
+                                    <p>
+                                            <img src="./images/s3.png">
+                                    </p>
+                                </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <div class="data-structure-2">
+                                    <p>
+                                            <h2>B Trees</h2>
+                                        <a href="BTree.html"><h5>Show Visualization</h5></a>
+                                        Binary search trees are not good for locality because a given node of the binary tree
+                                        probably occupies only a fraction of any cache line. B-trees are a way to get better
+                                        locality by putting multiple elements into each tree node.
+                                    </p>
+                                    <p>
+                                        B-trees were originally invented for storing data structures on disk, where locality is
+                                        even more crucial than with memory. Accessing a disk location takes about 5ms =
+                                        5,000,000ns. Therefore, if you are storing a tree on disk, you want to make sure that a
+                                        given disk read is as effective as possible. B-trees have a high branching factor, much
+                                        larger than 2, which ensures that few disk reads are needed to navigate to the place
+                                        where data is stored. B-trees may also useful for in-memory data structures because
+                                        these days main memory is almost as slow relative to the processor as disk drives were
+                                        to main memory when B-trees were first introduced!
+                                    </p>
+                                    <p>
+                                        A B-tree of order m is a search tree in which each nonleaf node has up to m children.
+                                        The actual elements of the collection are stored in the leaves of the tree, and the
+                                        nonleaf nodes contain only keys. Each leaf stores some number of elements; the maximum
+                                        number may be greater or (typically) less than m. The data structure satisfies several
+                                        invariants:
+                                        <ul>
+                                            <li>
+                                                Every path from the root to a leaf has the same length
+                                            </li>
+                                            <li>
+                                                If a node has n children, it contains n−1 keys.
+                                            </li>
+                                            <li>
+                                                Every node (except the root) is at least half full
+                                            </li>
+                                            <li>
+                                                The elements stored in a given subtree all have keys that are between the keys
+                                                in the parent node on either side of the subtree pointer. (This generalizes the
+                                                BST invariant.)
+                                            </li>
+                                            <li>
+                                                The root has at least two children if it is not a leaf.
+                                            </li>
+                                        </ul>
+                                    </p>
+                                    <h5>Example 1</h5>
+                                    <p>
+                                        The following is an order-5 B-tree (m=5) where the leaves have enough space
+                                        to store up to 3 data records:
+                                    </p>
+                                    <p>
+                                            <img src="./images/b1.png">
+                                    </p>
+                                    <p>
+                                        Because the height of the tree is uniformly the same and every node is at least half
+                                        full, we are guaranteed that the asymptotic performance is O(lg n) where n is the size
+                                        of the collection. The real win is in the constant factors, of course. We can choose m
+                                        so that the pointers to the m children plus the m−1 elements fill out a cache line at
+                                        the highest level of the memory hierarchy where we can expect to get cache hits. For
+                                        example, if we are accessing a large disk database then our "cache lines" are memory
+                                        blocks of the size that is read from disk.
+                                    </p>
+                                    <p>
+                                        Lookup in a B-tree is straightforward. Given a node to start from, we use a simple
+                                        linear or binary search to find whether the desired element is in the node, or if not,
+                                        which child pointer to follow from the current node.
+                                    </p>
+                                    <p>
+                                        Insertion and deletion from a B-tree are more complicated; in fact, they are notoriously
+                                        difficult to implement correctly. For insertion, we first find the appropriate leaf node
+                                        into which the inserted element falls (assuming it is not already in the tree). If there
+                                        is already room in the node, the new element can be inserted simply. Otherwise the
+                                        current leaf is already full and must be split into two leaves, one of which acquires
+                                        the new element. The parent is then updated to contain a new key and child pointer. If
+                                        the parent is already full, the process ripples upwards, eventually possibly reaching
+                                        the root. If the root is split into two, then a new root is created with just two
+                                        children, increasing the height of the tree by one.
+                                    </p>
+                                    <h5>Example 2</h5>
+                                    <p>
+                                        For example, here is the effect of a series of insertions. The first insertion (13)
+                                        merely affects a leaf. The second insertion (14) overflows the leaf and adds a key to an
+                                        internal node. The third insertion propagates all the way to the root.
+                                    </p>
+                                    <p>
+                                            <img src="./images/b2.png">
+                                    </p>
+                                    <p>
+                                        Deletion works in the opposite way: the element is removed from the leaf. If the leaf
+                                        becomes empty, a key is removed from the parent node. If that breaks invariant 3, the
+                                        keys of the parent node and its immediate right (or left) sibling are reapportioned
+                                        among them so that invariant 3 is satisfied. If this is not possible, the parent node
+                                        can be combined with that sibling, removing a key another level up in the tree and
+                                        possible causing a ripple all the way to the root. If the root has just two children,
+                                        and they are combined, then the root is deleted and the new combined node becomes the
+                                        root of the tree, reducing the height of the tree by one.
+                                    </p>
+                                </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+                  </div>
+                </div>
+              </div>
+
+        <footer id="sticky-footer" style="flex-shrink: none;" class="py-4 bg-dark text-white-50">
+            <div class="container text-center">
+                <small>Copyright &copy; <a href="https://www.rahulchauhan.codes" target="_blank"> Rahul K Chauhan</a></small>
+                    <br/>
+                <small>For Advanced Data Structures &#10084;&#65039;</small>
+            </div>
+        </footer>
+
+
+        <script>
+            $(function () {
+                $('#myList a:last-child').tab('show')
+            })
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+            </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+            </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+            </script>
+
+</body>
+
+</html> 
